@@ -1,0 +1,18 @@
+public class MyClass {
+    public static void main(String args[]) {
+      int nums[]={1,7,3,6,5,6};
+      System.out.println(pivotIndex(nums));
+    }
+    public static int pivotIndex(int[] nums) {
+        int ts=0,ls=0;
+        for(int n:nums){
+            ts+=n;
+        }
+        for (int i = 0; i < nums.length; ls+= nums[i++]){
+            if (ls * 2 == ts - nums[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
